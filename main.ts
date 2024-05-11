@@ -1,24 +1,34 @@
 import { Editor, MarkdownView, Plugin } from 'obsidian';
 
 
-// selects the entire line from index zero
-function selectLine(editor: Editor) {
-    const { line } = editor.getCursor();
-    const lineText = editor.getLine(line);
-    editor.setSelection({ line, ch: 0 }, { line, ch: lineText.length });
+function getOutlineDepth(lineText: string) {
+	const whitespacePrefix = /^\s*/.exec(lineText)
+	if (whitespacePrefix) {
+		return whitespacePrefix[0].length
+	} else return 0;
 }
 
-export default class SelectCurrentLinePlugin extends Plugin {
+function selectOutline(editor: Editor) {
+	const { line } = editor.getCursor();
+	const lineText = editor.getLine(line);
+	const outlineLevel = getOutlineDepth(lineText);
+	var lastLine = line;
+	for (var i = line + 1; i < editor.lineCount() && getOutlineDepth(editor.getLine(i)) > outlineLevel; i++) {
+		lastLine = i;
+	}
+
+	editor.setSelection({ line, ch: 0 }, { line: lastLine, ch: editor.getLine(lastLine).length });
+}
+
+export default class ListOutlineHelperPlugin extends Plugin {
 
 	async onload() {
-	
-		// This adds an editor command on the current editor instance
+
 		this.addCommand({
-			id: 'select-current-line-on-keystroke',
-			name: 'select the current line in editor',
-			hotkeys: [{modifiers: [], key: 'Escape'}],
+			id: 'select-current-list-outline',
+			name: 'Select current list outline',
 			editorCallback: (editor: Editor) => {
-				selectLine(editor);
+				selectOutline(editor);
 			}
 		});
 	}

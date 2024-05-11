@@ -1,10 +1,5 @@
-# Select the current line Plugin
+# Select the current outline Plugin
 
-![Apr-13-2023 15-22-57](https://user-images.githubusercontent.com/8376313/231723638-46cec13b-3b7e-4962-9ecb-f5b1487c67cc.gif)
+Use `Select current list outline` command to select a line in the list, and all subsequent lines with deeper identation. This mimics a behavior of onenote when pressing Cmd+A twice.
 
-
-A simple plugin. 
-When you press the `ESC` button on your keyboard, the current line selects. From the beginning to the end of the line.
-Note: Can change the hotkey to another specific key combination after installation. 
-
-Also supported in the mobile app via commands
+Can use in conjunction with "Move line up/down" commands to more the outline around, or use Tab/Shift-Tab to change outline level

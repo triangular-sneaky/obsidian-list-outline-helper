@@ -1,9 +1,9 @@
 {
-	"id": "select-current-line",
-	"name": "Select current line",
+	"id": "list-outline-helper",
+	"name": "Select current list outline",
 	"version": "1.0.0",
 	"minAppVersion": "1.0.0",
-	"description": "Selects the current line where the cursor is placed. Press 'ESC' button to select.",
+	"description": "Selects the current outline where the cursor is placed. Press 'ESC' button to select.",
 	"author": "Gokul",
 	"authorUrl": "https://github.com/gokulk16",
 	"fundingUrl": "",
