@@ -1,11 +1,11 @@
 {
 	"id": "list-outline-helper",
-	"name": "Select current list outline",
-	"version": "1.0.0",
+	"name": "Utilities to work with list outlines",
+	"version": "1.0.1",
 	"minAppVersion": "1.0.0",
-	"description": "Selects the current outline where the cursor is placed. Press 'ESC' button to select.",
-	"author": "Gokul",
-	"authorUrl": "https://github.com/gokulk16",
+	"description": "Utilities to work with list outlines. Currently supports selecting the outline (current line and children)",
+	"author": "triangular-sneaky",
+	"authorUrl": "https://github.com/triangular-sneaky",
 	"fundingUrl": "",
 	"isDesktopOnly": false
 }

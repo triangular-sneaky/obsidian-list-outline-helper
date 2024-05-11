@@ -17,7 +17,8 @@ function selectOutline(editor: Editor) {
 		lastLine = i;
 	}
 
-	editor.setSelection({ line, ch: 0 }, { line: lastLine, ch: editor.getLine(lastLine).length });
+	const selectionEnd = lastLine + 1 < editor.lineCount() ? { line: lastLine + 1, ch: 0 } : { line: lastLine, ch: editor.getLine(lastLine).length };
+	editor.setSelection({ line, ch: 0 }, selectionEnd);
 }
 
 export default class ListOutlineHelperPlugin extends Plugin {
