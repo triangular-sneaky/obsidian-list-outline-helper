@@ -12,8 +12,8 @@ function selectOutline(editor: Editor) {
 	const { line } = editor.getCursor();
 	const lineText = editor.getLine(line);
 	const outlineLevel = getOutlineDepth(lineText);
-	var lastLine = line;
-	for (var i = line + 1; i < editor.lineCount() && getOutlineDepth(editor.getLine(i)) > outlineLevel; i++) {
+	let lastLine = line;
+	for (let i = line + 1; i < editor.lineCount() && getOutlineDepth(editor.getLine(i)) > outlineLevel; i++) {
 		lastLine = i;
 	}
 
