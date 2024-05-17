@@ -1,7 +1,7 @@
 {
   "id": "list-outline-helper",
   "name": "List Outline Helper",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "minAppVersion": "1.0.0",
   "description": "Utilities to work with list outlines. Currently supports selecting the outline (current line and children)",
   "author": "triangular-sneaky",
